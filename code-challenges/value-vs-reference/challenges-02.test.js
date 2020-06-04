@@ -12,6 +12,8 @@ const raisedToTheThird = (arr) => {
   arr.forEach(Math.pow(arr, 3));
   return arr;
 }
+
+
 describe('Testing challenge 1', () => {
   test('It should return a new array of numbers raised to the thrid power', () => {
     expect(raisedToTheThird([2, 4, 5, -7, 0])).toStrictEqual([8, 64, 125, -343, 0]);
@@ -25,7 +27,8 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  // Solution code here...
+  const newEnd = str.push(' The end.')
+  return(newEnd);
 };
 
 /* ------------------------------------------------------------------------------------------------
