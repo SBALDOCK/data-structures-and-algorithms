@@ -61,14 +61,20 @@ const addNumbers = (num, arr, times, callback) => {
   ------------------------------------------------------------------------------------------------ */
   
   const createList = (availableItems) => {
-    availableItems.forEach( function(value) {
-      if( value === true){
-        availableItems.push(value);
+
+    availableItems.forEach(function(value){
+      if(value.available === true){
+       availableItems.push(value);
       }
-    })
-    return availableItems;
-  };
+      return createList;
+    });
+
   
+    
+    
+  
+   
+
   
 
   /* ------------------------------------------------------------------------------------------------
@@ -105,12 +111,13 @@ const addNumbers = (num, arr, times, callback) => {
       expect(speaker('hello 301 students!', greeting)).toStrictEqual('HELLO 301 STUDENTS!');
     });
   });
-  
+
   describe('Testing challenge 2', () => {
     test('It should add the number 8 to the array five times', () => {
       expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
       expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
     });
+
   });
   
   describe('Testing challenge 3', () => {
@@ -122,7 +129,6 @@ const addNumbers = (num, arr, times, callback) => {
     });
   });
 
-  
   describe('Testing challenge 4', () => {
     const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     
