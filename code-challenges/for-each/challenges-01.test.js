@@ -92,9 +92,16 @@ const addNumbers = (num, arr, times, callback) => {
   ------------------------------------------------------------------------------------------------ */
   
   const fizzbuzz = (arr) => {
-    // Solution code here...
-  };
-  
+
+  for (let i = 0; i <= max; i++) {
+    if (i % 3 === 0)  arr += 'Fizz'
+    if (i % 5 === 0) arr += 'Buzz'
+    if ((i % 5 === 0) || (i % 3 === 0)) arr += 'Fizz Buzz'
+    if (!storage.length) storage += i
+
+  }
+  return arr;
+};
   /* ------------------------------------------------------------------------------------------------
   TESTS
   
