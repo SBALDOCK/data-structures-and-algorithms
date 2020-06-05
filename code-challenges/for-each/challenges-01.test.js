@@ -61,6 +61,7 @@ const addNumbers = (num, arr, times, callback) => {
   ------------------------------------------------------------------------------------------------ */
   
   const createList = (availableItems) => {
+
     availableItems.forEach(function(value){
       if(value.available === true){
        availableItems.push(value);
@@ -73,11 +74,9 @@ const addNumbers = (num, arr, times, callback) => {
     
   
    
+
   
-  
-  
-  
-  
+
   /* ------------------------------------------------------------------------------------------------
   CHALLENGE 4
   
@@ -118,6 +117,7 @@ const addNumbers = (num, arr, times, callback) => {
       expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
       expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
     });
+
   });
   
   describe('Testing challenge 3', () => {
@@ -128,13 +128,12 @@ const addNumbers = (num, arr, times, callback) => {
       expect(createList(inventory).length).toStrictEqual(3);
     });
   });
-  
-  
+
   describe('Testing challenge 4', () => {
     const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     
-  test('It should print out messages or numbers', () => {
-    expect(fizzbuzz(inputs)).toStrictEqual([1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'Fizz Buzz', 16]);
-    expect(fizzbuzz(inputs).length).toStrictEqual(16);
+    test('It should print out messages or numbers', () => {
+      expect(fizzbuzz(inputs)).toStrictEqual([1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'Fizz Buzz', 16]);
+      expect(fizzbuzz(inputs).length).toStrictEqual(16);
+    });
   });
-});
