@@ -9,8 +9,8 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
-  // const newArray = arr.forEach(Math.pow(value, 3));
-  // return newArray;
+  const newArray = arr.forEach(Math.pow(value, 3));
+  console.log(newArray);
 };
 
 
@@ -22,7 +22,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  const newEnd = str.push(' The end.')
+  const newEnd = str.append(' The end.')
   return(newEnd);
 };
 
@@ -40,7 +40,7 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
-  appendFirstToLast(arr);
+  arr.push(1)(arr.shift());
 };
 
 /* ------------------------------------------------------------------------------------------------
