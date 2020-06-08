@@ -37,7 +37,7 @@ let $ = createSnippetWithJQuery(`
 `);
 
 const templateWithJQuery = () => {
-  // Solution code here...
+ $('#template.h2').html()
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,9 +55,14 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for(var i = 0; i < str.length; i++){
+    str.slice();
+  }
+  result.push(str);
   return result;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -68,7 +73,10 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  let newArray = [];
+  newArray = arr.split('')
+
+  return newArray
 };
 
 
@@ -112,17 +120,28 @@ const gruffaloCrumble = {
   ]
 };
 
-
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(ingredient => {  
+    let firstIndex = ingredient.indexOf(' ');
+    let secondStr = ingredient.slice(firstIndex + 1);
+    
+    let secondIdx = secondStr.indexOf(' ' + 1);
+    let finalStr = secondStr.slice(secondIdx + 1);
+
+    result.push(finalStr);
+
+  })
   return result;
 };
+//   result.push(ingredient.slice(ingredient.indexOf(' ', 4)+1, ingredient.length)
+// )});
+// return result;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 
-Write a function named splitFoods that uses split to produce the same output as Challenge 3.
+Write a function named splitFoods that uses split to produce the same output as Challenge 4.
 
 You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
@@ -136,7 +155,7 @@ const splitFoods = (recipe) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
 
-Use the same recipe from Challenge 3, above.
+Use the same recipe from Challenge 4, above.
 
 Write a function named stepAction that takes in the recipe and extracts the action verbs from the steps. Fortunate for you, the action verbs are the first word of each action.
 
