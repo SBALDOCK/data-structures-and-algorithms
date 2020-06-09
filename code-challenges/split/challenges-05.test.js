@@ -45,6 +45,8 @@ const templateWithJQuery = () => {
     $Template.find('p').text(person.eye_color)
     $('main').append($Template);
   })
+
+
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,7 +71,7 @@ const howMuchPencil = (str) => {
     result.push(str);
   }
 return result
-};
+
 
 
 
@@ -82,7 +84,6 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => arr.split('');
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
