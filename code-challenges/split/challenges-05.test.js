@@ -37,7 +37,16 @@ let $ = createSnippetWithJQuery(`
 `);
 
 const templateWithJQuery = () => {
- $('#template.h2').html()
+  let template = $('#template').html()
+  starWarsPeople.forEach(person => {
+    let $Template = $(`<section>${template}</section>`) 
+    $Template.find('h2').text(person.name)
+    $Template.find('h3').text(person.height)
+    $Template.find('p').text(person.eye_color)
+    $('main').append($Template);
+  })
+
+
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,12 +64,14 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  for(var i = 0; i < str.length; i++){
-    str.slice();
-  }
   result.push(str);
-  return result;
-};
+  let length = str.length
+  for(var i = 0; i < length; i++){
+    str = str.slice(1, str.length);
+    result.push(str);
+  }
+return result
+
 
 
 
@@ -72,13 +83,7 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  let newArray = [];
-  newArray = arr.split('')
-
-  return newArray
-};
-
+const wordsToCharList = (arr) => arr.split('');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -121,23 +126,11 @@ const gruffaloCrumble = {
 };
 
 const listFoods = (recipe) => {
-  let result = [];
-  recipe.ingredients.forEach(ingredient => {  
-    let firstIndex = ingredient.indexOf(' ');
-    let secondStr = ingredient.slice(firstIndex + 1);
-    
-    let secondIdx = secondStr.indexOf(' ' + 1);
-    let finalStr = secondStr.slice(secondIdx + 1);
-
-    result.push(finalStr);
-
+  return recipe.ingredients.map(i => {
+    return i.slice(i.indexOf(' ', i.indexOf(' ') + 1) + 1, i.length);
   })
-  return result;
 };
-//   result.push(ingredient.slice(ingredient.indexOf(' ', 4)+1, ingredient.length)
-// )});
-// return result;
-
+ 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 
