@@ -70,7 +70,10 @@ let $ = createSnippetWithJQuery(`
 `);
 
 const templatingWithMustache = () => {
-  // Solution code here...
+  familyArray = [];
+  const characterTemplate = $('#template').html();
+  let renderFamily = Mustache.render(characterTemplate, characters);
+  familyArray.push(renderFamily);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,9 +88,8 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   finalExam: true
 };
 
-const getCourseKeys = (obj) => {
-  // Solution code here...
-};
+const getCourseKeys = (obj) => Object.keys(obj);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -97,9 +99,13 @@ Write a function named getHouses that returns a new array containing the names o
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  arr.forEach(function(value) {
+    houses.push(value.house)
+
+  })
   return houses;
-};
+} 
+
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -114,9 +120,22 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-
+  const hasChildren = [];
+  arr.forEach(function(item){
+    if()
+  })
 };
+
+// const createList = (availableItems) => {
+//   let listItems = [];
+
+//     availableItems.forEach(function(item){
+//       if(item.available === true){
+//         listItems.push(item.name);
+//       }
+//     });
+//     return listItems;
+//   }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
