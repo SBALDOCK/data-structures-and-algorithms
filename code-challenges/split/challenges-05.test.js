@@ -70,8 +70,8 @@ const howMuchPencil = (str) => {
     str = str.slice(1, str.length);
     result.push(str);
   }
-return result
-
+return result;
+}
 
 
 
