@@ -119,12 +119,12 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenValues = (arr, character) => {
-  const hasChildren = [];
-  arr.forEach(function(item){
-    if()
-  })
-};
+// const hasChildrenValues = (arr, character) => {
+//   const hasChildren = [];
+//   arr.forEach(function(item){
+//     if()
+//   })
+// };
 
 // const createList = (availableItems) => {
 //   let listItems = [];
