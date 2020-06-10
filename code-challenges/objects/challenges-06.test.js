@@ -70,11 +70,19 @@ let $ = createSnippetWithJQuery(`
 `);
 
 const templatingWithMustache = () => {
-  familyArray = [];
-  const characterTemplate = $('#template').html();
-  let renderFamily = Mustache.render(characterTemplate, characters);
-  familyArray.push(renderFamily);
-};
+
+  let array = [];
+
+  characters.forEach(value =>{
+    let template = $('#template').html()
+
+    let toHtml = Mustache.render(template, value);
+    array.push(toHtml);
+  })
+
+  return array 
+}
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -119,23 +127,16 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
-// const hasChildrenValues = (arr, character) => {
-//   const hasChildren = [];
-//   arr.forEach(function(item){
-//     if()
-//   })
-// };
+const hasChildrenValues = (arr, character) => {
+  let parent = false;
+  arr.forEach(value => {
+    if(value.name === character){
+    parent = Object.values(value)[2].length > 0 ? true : false;
+    }
+  })
+    return parent
+};
 
-// const createList = (availableItems) => {
-//   let listItems = [];
-
-//     availableItems.forEach(function(item){
-//       if(item.available === true){
-//         listItems.push(item.name);
-//       }
-//     });
-//     return listItems;
-//   }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
