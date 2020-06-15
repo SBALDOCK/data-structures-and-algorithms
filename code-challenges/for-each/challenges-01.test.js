@@ -63,7 +63,7 @@ const addNumbers = (num, arr, times, callback) => {
   const createList = (availableItems) => {
   let listItems = [];
 
-    availableItems.forEach(function(item){
+    availableItems.forEach((item) => {
       if(item.available === true){
         listItems.push(item.name);
       }
