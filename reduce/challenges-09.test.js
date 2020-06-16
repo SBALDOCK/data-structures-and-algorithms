@@ -174,14 +174,14 @@ const mapCurrentEvents = () => currentEvents.map(results => new Event(results));
 // First, write a function called mapCurrentEvents that maps over the current events object, runs it through a constructor function and returns the resulting array.
 
 
-// function Event(obj){
-//     this.author = obj.author;
-//     this.categories = obj.categories;
-//     this.summary = obj.summary;
-//     this.img_url = obj.image_url;
-//     this.date = obj.date;
-//     this.title = obj.title
-// }
+function Event(obj){
+    this.author = obj.author;
+    this.categories = obj.categories;
+    this.summary = obj.summary;
+    this.img_url = obj.image_url;
+    this.date = obj.date;
+    this.title = obj.title
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
