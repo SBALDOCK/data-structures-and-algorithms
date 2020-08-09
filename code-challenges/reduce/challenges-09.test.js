@@ -158,20 +158,14 @@ const currentEvents = {
 }
 
 
-// app.get('/events', getCurrentEvents);
-
-// app.get('/events', getCurrentEvents);
+app.get('/events', getCurrentEvents);
 
 function getCurrentEvents(request, response){
-  // let map = mapCurrentEvents();
-  // response.status(200).send(map);
+  let map = mapCurrentEvents();
+  response.status(200).send(map);
 }
 
-
 const mapCurrentEvents = () => currentEvents.map(results => new Event(results));
-
-
-// First, write a function called mapCurrentEvents that maps over the current events object, runs it through a constructor function and returns the resulting array.
 
 
 function Event(obj){
