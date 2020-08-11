@@ -1,7 +1,16 @@
 # data-structures-and-algorithms
 Code 401 Code Challenges
 
-* For each Code 401 daily lab, create a new branch off of the "Data Structures And Algorithms" directory.
-* Each individual branch will contain work for the daily partner lab, which can then be merged into the master upon completion.
+# Reverse an Array
+
+## Challenge
+* Write a function called reverseArray which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
+
+## Approach & Efficiency
+* I decided to approach this challenge with a for loop, starting from the end of the array and using "push" to assign each array[i] to a new array in order. This reversed the order of the original array. 
+
+## Solution
 
 [array-reverse](javascript/challenges/arrayReverse/array-reverse.js)
+
+[whiteboard](javascript/assets/array-reverse.jpg)
