@@ -13,4 +13,4 @@ Code 401 Code Challenges
 
 [array-reverse](javascript/challenges/arrayReverse/array-reverse.js)
 
-[whiteboard](javascript/assets/array-reverse.jpg)
+![whiteboard](./assets/array-reverse.jpg)
