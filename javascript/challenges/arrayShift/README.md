@@ -14,4 +14,4 @@ Code 401 Code Challenges
 
 [array-shift](javascript/challenges/arrayShift/array-shift.js)
 
-![whiteboard](../assets/arrayShift.png)
+![whiteboard](arrayShift.png)
