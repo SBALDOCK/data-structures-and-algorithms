@@ -25,4 +25,5 @@ function binarySearch(arr, kilmer){
   console.log(binarySearch(array, 9999))
 
 
+  module.exports = binarySearch;
 

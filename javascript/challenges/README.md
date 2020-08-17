@@ -5,8 +5,12 @@ Code 401 Code Challenges
 * Each individual branch will contain work for the daily partner lab, which can then be merged into the master upon completion. 
 
 
-### Table Of Contents
+###  Code Challenge Table Of Contents
 
 Challenge 1 - [array-reverse](arrayReverse/array-reverse.js)
 
 Challenge 2 - [array-shift](arrayShift/array-shift.js)
+
+Challenge 3 - [array-Binary-search](arrayBinarySearch/array-binary-search.js)
+
+Challenge 5 - [Linked Lists](linkedList/linked-list.js)
