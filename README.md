@@ -5,9 +5,9 @@ Code 401 Labs
 * Each individual branch will contain work for the daily partner lab, which can then be merged into the master upon completion. 
 
 
-Challenge 1 - [array-reverse](arrayReverse/array-reverse.js)
 
-Challenge 2 - [array-shift](arrayShift/array-shift.js)
+
+
 
  <!-- - [ ] Top-level README “Table of Contents” is updated
  - [ ] Feature tasks for this challenge are completed
