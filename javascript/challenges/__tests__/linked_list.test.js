@@ -57,4 +57,14 @@ it('It should return a collection of all values in LinkedLIst ', () => {
   expect(ll);
 })
 
+it('Should insert value before first value node', () => {
+  const ll = new LinkedList();
+  expect().toBe();
+})
+
+it('Should insert value after first value node', () => {
+  const ll = new LinkedList();
+  expect().toBe();
+})
+
 

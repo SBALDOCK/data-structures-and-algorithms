@@ -14,3 +14,5 @@ Challenge 2 - [array-shift](arrayShift/array-shift.js)
 Challenge 3 - [array-Binary-search](arrayBinarySearch/array-binary-search.js)
 
 Challenge 5 - [Linked Lists](linkedList/linked-list.js)
+
+Challenge 6 - [Linked Lists](linkedList/linked-list.js)
