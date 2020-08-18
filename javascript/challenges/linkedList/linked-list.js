@@ -13,6 +13,8 @@ class LinkedList {
     this.head = new Node (value, this.head);
   }
 
+  // Code Challenge 6
+
   // Append method
   append(value) {
     const newNode = new Node(value);
@@ -30,27 +32,48 @@ class LinkedList {
     currentNode.next = newNode;
   }
 
+  // insertBefore method
   insertBefore(targetValue, value) {
+    if(!this.head) {
+      return;
+    }
+    if(this.head.value === targetValue) {
+      this.insert(value);
+      return;
+    }
     let currentNode = this.head
-    while(currentNode.next){
-      if(currentNode.next === targetValue){
+    while(currentNode){
+      if(!currentNode.next){
+        break;
+      }
+      if(currentNode.next.value === targetValue){
         currentNode.next = new Node (value, currentNode.next);
         return;
       }
       currentNode = currentNode.next;
-      }
     }
-  
+  }
 
+  // insertAfter Method
   insertAfter(targetValue, value) {
-    let currentNode = this.head
-    while(currentNode.next) {
-      if(currentNode === targetValue) {
-        currentNode.next = new Node(value, currentNode.next);
-        return;
-      }
-
+    if(!this.head) {
+      return;
     }
+    if(this.head.value === targetValue) {
+      this.insert(value);
+      return;
+    }
+    let currentNode = this.head
+    while(currentNode){
+        if(!currentNode.next){
+          break;
+        }
+        if(currentNode.value === targetValue){
+          currentNode.next = new Node (value, currentNode.next);
+          return;
+        }
+        currentNode = currentNode.next;
+     }
   }
      
   // Includes method
@@ -67,15 +90,27 @@ class LinkedList {
     
   // toString method
   toString(value) {
+    let str = '';
     let currentNode = this.head;
-    let newArray = [];
-    while(currentNode !== null) {
-      newArray.push('{ '+ currentNode.value + ' } >')
+    // let newArray = [];
+    while(currentNode) {
+      str += `{ ${currentNode.value} } -> `;
       currentNode = currentNode.next;
+      // newArray.push('{ '+ currentNode.value + ' } >')
     }
-    let literal = newArray.join(' ').toString();
-    return `${literal} Null`;
+    return str;
+    // let literal = newArray.join(' ').toString();
+    // return `${literal} Null`;
   }
+
+  // Code Challenge 7 
+
+  // establish that there is a head
+  // Where k is greater than the length - K is null?
+  // Where k and length of list are same - k is the last node
+  // Where k is not a positive integer - 
+  // Where k is 
+  // Where k is in the middle, neither the first nor last node
 
 }
   
