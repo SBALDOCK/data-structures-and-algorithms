@@ -64,7 +64,7 @@ it('should stringify', () => {
   expect(ll.toString()).toBe(' { bananas } -> { apples } -> NULL');
 })
 
-// Tests for challenge 06
+// Code Challenge 6 Tests
 
 it('Should insert value before first value node', () => {
   const ll = new LinkedList();
@@ -99,31 +99,15 @@ it('should handle empty list when inserting after', () => {
   expect(ll.toString()).toBe('NULL');
 });
 
-// Tests for challenge 7
 
-it('should test where value is greater than list length', () => {
+// Code Challenge 7 test
+it('should get k of 2', () => {
   const ll = new LinkedList();
   ll.insert('apples');
   ll.insert('dates');
   ll.insert('bananas');
+  expect(ll.kthFromTheEnd(2)).toBe('bananas');
 
-  expect
-})
-
-it('should test where value and list are the same length', () => {
-  const ll = new LinkedList();
-})
-
-it('should test where value is a postive integer', () => {
-  const ll = new LinkedList();
-})
-
-it('should test where linked list is of a size 1', () => {
-  const ll = new LinkedList();
-})
-
-it('should return happy path where value isnot at the end but in the middle of the linked list', () => {
-  const ll = new LinkedList();
 })
 
 

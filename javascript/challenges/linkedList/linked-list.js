@@ -104,26 +104,58 @@ class LinkedList {
   }
 
   // Code Challenge 7-------------------------------------------------------------------------------------
-  kthFromTheEnd(value) {
-    let listLength = 0;
-    let currentNode = this.head
+  // kthFromTheEnd(value) {
+  //   let listLength = 0;
+  //   let currentNode = this.head
     
-    if(!this.head) {
-      return;
-    }
-    if(this.head.value === value) {
-      return this.head.value;
-    }
-    while(this.head) {
-      currentNode = this.head 
-      listLength++; 
-    }
-    if (listLength < value)
-      return;
-  }
-
-
+  //   if(!this.head) {
+  //     return;
+  //   }
+  //   if(this.head.value === value) {
+  //     return this.head.value;
+  //   }
+  //   while(this.head) {
+  //     currentNode = this.head 
+  //     listLength++; 
+  //   }
+  //   if (listLength < value)
+  //     return;
+  // }
   
+  // Solution converting Linked List to Array to identify index positions
+  // O(1) - 1 
+  // O(N) - space - How does the extra space being used scale with the input?
+  kthFromTheEnd(k) {
+    const arr = [];
+    let currentNode = this.head;
+    if(currentNode) {
+      arr.push(currentNode.value);
+    }
+    while(currentNode.next) {
+      currentNode = currentNode.next;
+      arr.push(currentNode.value);
+    }
+    if(k > arr.length) {
+      throw new RangeError('k too big');
+    } else if (k === arr.length) {
+      throw new RangeError('k is 1 too big');
+    } else if ( k < 0) {
+      throw new RangeError('k is too small');
+    } else {
+      const indexOfValue = arr.length - (k + 1);
+      return arr[indexOfValue];
+    }
+  }
+}
+
+
+
+
+// Code Challenge 8----------------------------------------------------------------------------------------
+function zipLIsts (list1, list2) {
+  let cur1 = list1.head;
+}
+
 // Create new Node class
 class Node {
 
