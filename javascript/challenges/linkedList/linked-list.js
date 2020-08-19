@@ -96,35 +96,13 @@ class LinkedList {
     while(currentNode) {
       str += `{ ${currentNode.value} } -> `;
       currentNode = currentNode.next;
-      // newArray.push('{ '+ currentNode.value + ' } >')
     }
     return str;
-    // let literal = newArray.join(' ').toString();
-    // return `${literal} Null`;
   }
 
-  // Code Challenge 7-------------------------------------------------------------------------------------
-  // kthFromTheEnd(value) {
-  //   let listLength = 0;
-  //   let currentNode = this.head
-    
-  //   if(!this.head) {
-  //     return;
-  //   }
-  //   if(this.head.value === value) {
-  //     return this.head.value;
-  //   }
-  //   while(this.head) {
-  //     currentNode = this.head 
-  //     listLength++; 
-  //   }
-  //   if (listLength < value)
-  //     return;
-  // }
-  
+  // Code Challenge 7-------------------------------------------------------------
   // Solution converting Linked List to Array to identify index positions
-  // O(1) - 1 
-  // O(N) - space - How does the extra space being used scale with the input?
+
   kthFromTheEnd(k) {
     const arr = [];
     let currentNode = this.head;
