@@ -37,5 +37,5 @@ I applied the information I gathered through my reading assignments and class de
 
 ![Linked-List Whiteboard - Challenge #2](linked-list-whiteboard.png)
 
-![Linked-List Whiteboard - Challenge #3](#);
+![Linked-List Whiteboard - Challenge #3](kth-from-end.png);
 

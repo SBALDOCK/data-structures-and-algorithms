@@ -13,7 +13,7 @@ class LinkedList {
     this.head = new Node (value, this.head);
   }
 
-  // Code Challenge 6
+  // Code Challenge 6----------------------------------------------------------------------
 
   // Append method
   append(value) {
@@ -103,16 +103,26 @@ class LinkedList {
     // return `${literal} Null`;
   }
 
-  // Code Challenge 7 
+  // Code Challenge 7-------------------------------------------------------------------------------------
+  kthFromTheEnd(value) {
+    let listLength = 0;
+    let currentNode = this.head
+    
+    if(!this.head) {
+      return;
+    }
+    if(this.head.value === value) {
+      return this.head.value;
+    }
+    while(this.head) {
+      currentNode = this.head 
+      listLength++; 
+    }
+    if (listLength < value)
+      return;
+  }
 
-  // establish that there is a head
-  // Where k is greater than the length - K is null?
-  // Where k and length of list are same - k is the last node
-  // Where k is not a positive integer - 
-  // Where k is 
-  // Where k is in the middle, neither the first nor last node
 
-}
   
 // Create new Node class
 class Node {

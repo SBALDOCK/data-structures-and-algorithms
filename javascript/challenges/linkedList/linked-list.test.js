@@ -103,6 +103,11 @@ it('should handle empty list when inserting after', () => {
 
 it('should test where value is greater than list length', () => {
   const ll = new LinkedList();
+  ll.insert('apples');
+  ll.insert('dates');
+  ll.insert('bananas');
+
+  expect
 })
 
 it('should test where value and list are the same length', () => {
