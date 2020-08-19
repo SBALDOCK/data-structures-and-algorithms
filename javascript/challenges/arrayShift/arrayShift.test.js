@@ -1,4 +1,4 @@
-const insertShiftArray = require('array-shift.js');
+const insertShiftArray = require('./array-shift.js');
 
 test('insertShiftArray exists', () => {
   expect(insertShiftArray).toBeDefined();

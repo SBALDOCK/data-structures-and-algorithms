@@ -1,4 +1,4 @@
-const binarySearch = require('array-binary-search.js')
+const binarySearch = require('./array-binary-search.js')
 
 describe('Happy tests', () => {
   it('Should return correct index', () => {
