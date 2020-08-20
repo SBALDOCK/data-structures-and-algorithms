@@ -1,6 +1,7 @@
 'use strict';
 
-const LinkedList = require('./linked-list.js');
+const {LinkedList, zipLists} = require('./linked-list.js');
+
 
 it('should instantiate', () => {
   const ll = new LinkedList();
@@ -29,20 +30,6 @@ it ('should append to empty list', () => {
   expect(ll.head.value).toBe('apples');
 });
 
-// it('should add to NOT empty list', () => {
-//   const ll = new LinkedList();
-//   ll.insert('apples');
-//   ll.insert('bananas');
-
-//   ll.append('cucumbers');
-
-//   expect(ll.head.value).toBe('bananas');
-//   expect(ll.head.next.value).toBe('apples');
-
-//   expect(ll.head.next.next.value).toBe('cucumbers');
-//   expect(ll.head.next.next).toBe(null);
-
-// });
 
 it('It should return a boolean', () => {
   const ll = new LinkedList();
@@ -110,4 +97,34 @@ it('should get k of 2', () => {
 
 })
 
+// Code Challenge 8 Tests
+it('should zip lists', () => {
+  const list1 = new LinkedList();
+  const list2 = new LinkedList();
 
+  list1.insert(2);
+  list1.insert(3);
+  list1.insert(1);
+
+  list2.insert(4);
+  list2.insert(9);
+  list2.insert(5);
+  const zipped = zipLists(list1, list2);
+  expect(zipped.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NULL');
+})
+
+it('should zip top longer lists', () => {
+  const list1 = new LinkedList();
+  const list2 = new LinkedList();
+
+  list1.insert(12);
+  list1.insert(2);
+  list1.insert(3);
+  list1.insert(1);
+
+  list2.insert(4);
+  list2.insert(9);
+  list2.insert(5);
+  const zipped = zipLists(list1, list2);
+  expect(zipped.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> { 12 } -> NULL');
+});

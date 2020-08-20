@@ -126,22 +126,43 @@ class LinkedList {
   }
 }
 
+// Code Challenge 8-------------------------------------------------------------
+// Big 0 for time - O(n)
+// Big 0 for space - O(1)
 
+function zipLists (list1, list2) {
+  let currentNode1 = list1.head;
+  let currentNode2 = list2.head;
 
+  while(currentNode1 && currentNode2) {
 
-// Code Challenge 8----------------------------------------------------------------------------------------
-function zipLIsts (list1, list2) {
-  let cur1 = list1.head;
+    let pointer1 = currentNode1.next;
+    currentNode1.next = currentNode2;
+
+    let pointer2 = currentNode2.next;
+
+    if(pointer1) {
+      currentNode2.next = pointer1;
+    } else {
+      break;
+    }
+
+    currentNode1 = pointer1;
+    currentNode2 = pointer2;
+  }
+  return list1
 }
 
 // Create new Node class
 class Node {
-
   constructor(value, next = null) {
     this.value = value;
     this.next = next;
-
   }
 }
 
-module.exports = LinkedList;
+
+module.exports = {
+  zipLists,
+  LinkedList
+};
