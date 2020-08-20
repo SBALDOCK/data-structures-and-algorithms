@@ -39,7 +39,8 @@ I applied the information I gathered through my reading assignments and class de
 
 [Linked List](linked-list.js)
 
-![Linked-List Whiteboard - Challenge #2](linked-list-whiteboard.png)
+![Linked-List Whiteboard - Challenge #6](linked-list-whiteboard.png)
 
-![Linked-List Whiteboard - Challenge #3](kth-from-end.png);
+![Linked-List Whiteboard - Challenge #7](kth-from-end.png);
 
+![Linked-List Whiteboard - Challenge #8](zipped.png);
