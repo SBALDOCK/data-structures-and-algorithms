@@ -48,7 +48,7 @@ it('should stringify', () => {
   const ll = new LinkedList();
   ll.insert('apples');
   ll.insert('bananas');
-  expect(ll.toString()).toBe(' { bananas } -> { apples } -> NULL');
+  expect(ll.toString()).toBe('{ bananas } -> { apples } -> ');
 })
 
 // Code Challenge 6 Tests
@@ -59,7 +59,7 @@ it('Should insert value before first value node', () => {
   ll.insert ('dates');
   ll.insert ('bananas')
   ll.insertBefore('apples', 'cucumbers');
-  expect(ll.toString()).toBe('{ bananas } -> { dates} -> { cucumbers} -> { apples } -> NULL');
+  expect(ll.toString()).toBe('{ bananas } -> { dates } -> { cucumbers } -> { apples } -> ');
 });
 
 it('should not insert when target missing', () => {
@@ -68,7 +68,7 @@ it('should not insert when target missing', () => {
   ll.insert('dates');
   ll.insert('bananas');
   ll.insertBefore('nothing', 'cucumbers');
-  expect(ll.toString()).toBe(' { bananas } -> { dates } -> { apples } -> NULL');
+  expect(ll.toString()).toBe('{ bananas } -> { dates } -> { apples } -> ');
 });
 
 it('Should insert value after first value node', () => {
@@ -77,13 +77,13 @@ it('Should insert value after first value node', () => {
   ll.insert('dates');
   ll.insert('bananas');
   ll.insertAfter('dates', 'cucumbers');
-  expect(ll.toString()).toBe('{ bananas } -> { dates } -> { cucumbers } -> { apples } -> NULL');
+  expect(ll.toString()).toBe('{ bananas } -> { dates } -> { cucumbers } -> { apples } -> ');
 });
 
 it('should handle empty list when inserting after', () => {
   const ll = new LinkedList();
   ll.insertAfter('foo', 'bar');
-  expect(ll.toString()).toBe('NULL');
+  expect(ll.toString()).toBe('');
 });
 
 
@@ -110,7 +110,7 @@ it('should zip lists', () => {
   list2.insert(9);
   list2.insert(5);
   const zipped = zipLists(list1, list2);
-  expect(zipped.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NULL');
+  expect(zipped.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> ');
 })
 
 it('should zip top longer lists', () => {
@@ -126,5 +126,5 @@ it('should zip top longer lists', () => {
   list2.insert(9);
   list2.insert(5);
   const zipped = zipLists(list1, list2);
-  expect(zipped.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> { 12 } -> NULL');
+  expect(zipped.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> { 12 } -> ');
 });
