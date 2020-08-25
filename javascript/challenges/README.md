@@ -18,3 +18,7 @@ Challenge 5 - [Linked Lists](linkedList/linked-list.js)
 Challenge 6 - [Linked Lists](linkedList/linked-list.js)
 
 Challenge 7 - [Linked Lists](linkedList/linked-list.js)
+
+[stacksAndQueue](stacksAndQueues/stacks-and-queues.js)
+
+[queueWithStacks](queueWithStacks/queue-with-stacks.js)

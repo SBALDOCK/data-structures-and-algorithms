@@ -52,35 +52,31 @@ class Stack {
     this.length = 0;
   }
   
-    // insert method
-  insert (value) {
-    this.top = new Node (value, this.next);
+  isEmpty(){
+    return (this.length < 1) ? true : false;
   }
-  
+
   push(value){
-    this.top = new Node(value, this.top);
-    this.length++;
-    return;
+    const node = new Node(value, this.top);
+    node.next = this.top;
+    this.top = node;
   }
   
   peek() {
     if(this.isEmpty()) {
       throw new RangeError('Cannot peek from empty stack')
     }
-    // console.log(this.top);
     return this.top.value;
     }
 
-  // Not done here
   pop(){
     if(this.isEmpty()) {
       throw new RangeError('Cannot pop from empty stack')
     } 
-    return this.top.value;
-  }
-
-  isEmpty(){
-    return (this.length < 1) ? true : false;
+    let current = this.top;
+    this.top = this.top.next;
+    current.next = null;
+    return current.value;
   }
 }
 
