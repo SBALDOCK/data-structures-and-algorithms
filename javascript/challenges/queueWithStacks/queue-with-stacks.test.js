@@ -13,6 +13,6 @@ it('should instantiate an empty stack', () => {
 
 it ('should successfully pop off a stack', () => {
   const stack= new Stack();
-  stack.push('apples');
+  stack.enqueue('apples');
   expect(stack.pop()).toBe('apples');
 })
