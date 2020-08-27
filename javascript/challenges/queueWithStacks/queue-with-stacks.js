@@ -2,39 +2,47 @@
 
 class PseudoQueue {
 
-  constructor(value) {
+  constructor(value, firstStack, secondStack) {
+    this.top = null;
     this.value = value;
+    this.firstStack = firstStack;
+    this.secondStack = secondStack;
   }
 
   enqueue() {
-    let firstStack = new Stack();
-    let secondStack = new Stack();
+    let first = this.firstStack;
+    let second = this.secondStack;
     let node = new Node ();
     let enqueueNode = new Node ();
-    node = firstStack.top;
-    while (firstStack.top.value !== null) {
-      secondStack.push(this.firstStack.pop);
+    node = first.top.value;
+    while (first.top.value !== null) {
+      second.push(this.first.pop);
     }
-    enqueueNode.push(firstStack);
-    while (secondStack.top.value !== null) {
-      firstStack.push(secondStack.pop);
+    enqueueNode.push(first);
+    while (second.top.value !== null) {
+      first.push(second.pop);
     }
-    return firstStack;
+    return first;
   };
 
   dequeue() {
-    let firstStack = new Stack();
-    let secondStack = new Stack();
+   let first = this.firstStack;
+   let second = this.secondStack;
+   let node = new Node();
+   node = first.top.value;
+   while (first.top.value !== null) {
+     second.push(this.first.pop);
+   }
+   while(second.top.value !== null) {
+     this.second.pop;
+     return second;
+   }
+   return first;
+
   };
 
 }
 
-// Create new Node class
-class Stack {
-  constructor(top) {
-   this.top = null;
-  }
-}
 
 class Node {
   constructor(value, next = null) {

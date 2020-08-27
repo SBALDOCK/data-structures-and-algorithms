@@ -9,6 +9,11 @@ it('should be a class', () => {
   expect(Stack).toBeDefined();
 })
 
+it('should instantiate an empty stack', () => {
+  const ll = new Stack();
+  expect(ll).toBeDefined();
+});
+
 it('Can successfully push onto a stack', () => {
   const ll = new Stack();
   ll.push('apples');
@@ -26,28 +31,24 @@ it('should successully pop off stack', () => {
   const ll = new Stack;
   ll.push('apples');
   ll.push('bananas');
-  expect(ll.pop()).toBe('bananas');
+  const popped = ll.pop();
+  expect(popped).toBe('bananas');
+
+  ll.pop();
+  expect(ll.isEmpty()).toBeTruthy();
 });
 
-it('should empty stack after multiple pops', () => {
-  const ll = new Stack;
-  ll.push('apples');
-  ll.push('bananas');
-  expect(ll.pop()).toBe('bananas');
-  // expect(ll.peek()).toBe('apples');
-  // expect(ll.isEmpty()).toBe(true);
-});
-
-it('should instantiate an empty stack', () => {
+it('should check if it is not empty', () => {
   const ll = new Stack();
-  expect(ll).toBeDefined();
+  ll.push('apples');
+  expect(ll.isEmpty()).toBeFalsy();
 });
 
 it('should check if it is empty', () => {
   const ll = new Stack();
-  ll.push('apples');
-  expect(ll.isEmpty()).toBe(false);
-})
+  console.log('console log stack', ll);
+  expect(ll.isEmpty()).toBeTruthy();
+});
 
 it('should not allow pop from empty list', () => {
   const ll = new Stack();
