@@ -53,21 +53,26 @@ class Stack {
   }
   
   isEmpty(){
-    return (this.length < 1) ? true : false;
+    if(this.top === null){
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  push(value){
-    const node = new Node(value, this.top);
-    node.next = this.top;
-    this.top = node;
-  }
-  
   peek() {
     if(this.isEmpty()) {
       throw new RangeError('Cannot peek from empty stack')
     }
     return this.top.value;
     }
+
+  push(value){
+    const prev = this.top;
+    this.top = new Node(value, this.top);
+    this.top.next = prev;
+  }
+  
 
   pop(){
     if(this.isEmpty()) {

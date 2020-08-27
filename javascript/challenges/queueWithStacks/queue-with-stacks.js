@@ -14,7 +14,7 @@ class PseudoQueue {
     let second = this.secondStack;
     let node = new Node ();
     let enqueueNode = new Node ();
-    node = first.top;
+    node = first.top.value;
     while (first.top.value !== null) {
       second.push(this.first.pop);
     }
@@ -26,18 +26,23 @@ class PseudoQueue {
   };
 
   dequeue() {
-    let firstStack = new Stack();
-    let secondStack = new Stack();
+   let first = this.firstStack;
+   let second = this.secondStack;
+   let node = new Node();
+   node = first.top.value;
+   while (first.top.value !== null) {
+     second.push(this.first.pop);
+   }
+   while(second.top.value !== null) {
+     this.second.pop;
+     return second;
+   }
+   return first;
+
   };
 
 }
 
-// Create new Node class
-class Stack {
-  constructor() {
-   this.top = null;
-  }
-}
 
 class Node {
   constructor(value, next = null) {
