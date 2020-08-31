@@ -25,7 +25,7 @@ class Queue {
       throw new RangeError('Cannot dequeue from empty queue');
     }
     if (this.front !== null) {
-      node = this.front.value;
+      node = this.front;
       this.front = this.front.next;
     } 
     return node;
@@ -35,7 +35,9 @@ class Queue {
     if(this.isEmpty()) {
       throw new RangeError('Cannot view empty queue');
     }
-    return this.front.value;
+    if(this.front !== null) {
+      return this.front.value;
+    } 
   }
 
   isEmpty(){
@@ -94,6 +96,10 @@ class Node {
 }
 
 
-module.exports = Stack;
+module.exports = {
+  Stack,
+  Queue,
+  Node
+}
 
 
