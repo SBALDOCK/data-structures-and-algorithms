@@ -22,7 +22,7 @@
 * Can successfully return a collection from a postorder traversal
 
 ## Approach & Efficiency
-
+* Adding a new node in the right place on a Binary Tree is O(n). 
 
 ## Queue with Stacks Links
 
@@ -30,4 +30,4 @@
 
 [Trees Tests](tree.test.js)
 
-![Whiteboard](trees.png)
+![Whiteboard](tree.png)
