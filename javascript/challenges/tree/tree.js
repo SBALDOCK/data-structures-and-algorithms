@@ -23,7 +23,6 @@ class BinaryTree {
       }
 
       arr.push(root.value);
-
       _preOrder(root.left);
       _preOrder(root.right);
 
@@ -67,26 +66,60 @@ class BinaryTree {
   
       return arr;
   }
+
+  findMaximumValue() {
+    const arr = [];
+    let max = 0;
+
+      function _preOrder(root) {
+        if(!root) {
+          return;
+        }
+
+        if(root.left) {
+          _preOrder(root.left);
+        }
+
+        arr.push(root.value);
+
+        if(root.right){
+          _preOrder(root.right);
+        }
+      }
+      _preOrder(this.root);
+      for (let i = 0; i < arr.length; i++) {
+        if(arr[i] > max) {
+          max = arr[i]
+          return max;
+        }
+      }
+  }
 }
+
+
 
 class BinarySearchTree extends BinaryTree {
 
 
   add(value) {
-    const newVal = new Node(value);
+
+    if(!this.root) {
+      this.root = new Node(value);
+      return;
+    }
+    
+    function add_inner(value, root) {
+      const node = new Node(value);
    
-    while(this.left || this.right) {
-      if(this.root === null) {
-        this.root = newVal;
-      }
-      if(newVal.value < this.root) {
-        this.root = this.root.left;
-      }
-      if(newVal.value > this.root) {
-        this.root = this.root.right;
+      if(value <= root.value) {
+   
+        root.left = node;
+      } else {
+        root.right = node;
       }
     }
-    return newVal;
+    add_inner(value, this.root)
+    
   }
 
   contains(value) {
@@ -103,10 +136,14 @@ class BinarySearchTree extends BinaryTree {
       }
     }
   }
+
+  contains(value) {
+
+  }
 };
 
 module.exports = {
   Node,
   BinaryTree,
-  BinarySearchTree
+  BinarySearchTree,
 }
