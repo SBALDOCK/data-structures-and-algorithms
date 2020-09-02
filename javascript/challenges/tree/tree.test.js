@@ -66,7 +66,7 @@ it('can add an additional item to the tree', () => {
   expect(tree.root.right.value).toBe(25);
 })
 
-it('shuld return the largest value in the tree', () => {
+it('should return the largest value in the tree', () => {
   const eight = new Node(8);
   const six = new Node(6);
   const five = new Node(5, eight, six);
