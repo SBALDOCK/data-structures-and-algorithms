@@ -8,23 +8,29 @@ class Node {
   }
 }
 
+ class Tree {
+   constructor(root=null){
+     this.root = root;
+   }
+ };
+
 
 function fizzBuzzTree(tree) {
   function _preOrder(root) {
     if(!root) {
       return;
     }
-    if(root %15 === 0) {
+    if(root.value %15 === 0) {
       root.value = 'fizzbuzz';
       _preOrder(root.left);
       _preOrder(root.right);
       return;
-    } else if (root %3 === 0) {
+    } else if (root.value %3 === 0) {
       root.value = 'fizz';
       _preOrder(root.left);
       _preOrder(root.right);
       return;
-    } else if(root %5 === 0) {
+    } else if(root.value %5 === 0) {
       root.value = 'buzz';
       _preOrder(root.left);
       _preOrder(root.right);
@@ -39,6 +45,7 @@ function fizzBuzzTree(tree) {
 }
 
 module.exports = {
+  Tree,
   fizzBuzzTree,
   Node,
 }

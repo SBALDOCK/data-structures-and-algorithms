@@ -40,8 +40,12 @@ class Queue {
     } 
   }
 
-  isEmpty(){
-    return (this.length < 1) ? true : false;
+  isEmpty() {
+    if (!this.front) {
+      return true;
+    } else if (this.front.value) {
+      return false;
+    }
   }
 
 }
