@@ -11,12 +11,12 @@
 * If the value is not divisible by 3 or 5, simply turn the number into a String.
 
 ## Testing Requirements
-* 
-*
-*
+* Expect values divisible by three to return "fizz"
+* Expect values divisible by five to return "buzz"
+* Expect values divisible by three AND five to return "fizzbuzz"
 
 ## Approach & Efficiency
-* Adding a new node in the right place on a Binary Tree is O(n). 
+* O(n)
 
 ## Fizz Buzz Tree
 
