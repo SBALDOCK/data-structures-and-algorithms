@@ -15,4 +15,4 @@
 
 [Challenge](breadth-first.js);
 [tests](breadth-first.test.js);
-[whiteboard](#)
+[whiteboard](breadth-first.png);

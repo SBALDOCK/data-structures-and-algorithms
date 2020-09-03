@@ -8,14 +8,36 @@ class Node {
   }
 }
 
-class BinaryTree {
+class Tree {
   constructor (root=null) {
     this.root = root;
   }
 
   breadthFirst(tree){
+    let tempArr = [];
     node1 = new Node();
     this.root = node1;
+    const binaryArray = [];
+    binaryArray.push(this.root);
+    if(!tree.root) {
+      throw new RangeError('This thing is empty');}
+    while(!binaryArray.isEmpty()){
+      binaryArray.shift();
+      tempArr.push(this.root);
+    }
+    if(this.root.left !== null){
+      binaryArray.push(this.root.left);
+    }
+    if(this.root.right !== null){
+      binaryArray.push(this.root.right);
+    }
+    return tempArr;
   }
+  
+}
 
+module.exports = {
+  Node,
+  Queue,
+  Tree
 }
