@@ -3,26 +3,26 @@
 class PseudoQueue {
 
   constructor(value, firstStack, secondStack) {
-    this.top = null;
     this.value = value;
     this.firstStack = firstStack;
     this.secondStack = secondStack;
   }
 
   enqueue() {
-    let first = this.firstStack;
-    let second = this.secondStack;
-    let node = new Node ();
-    let enqueueNode = new Node ();
-    node = first.top.value;
-    while (first.top.value !== null) {
-      second.push(this.first.pop);
+    let firstStack = this.firstStack;
+    
+    let node = new Node();
+    node = firstStack.top;
+    let enqueueNode = new Node();
+    let secondStack = this.second;
+    while (firstStack.top) {
+      secondStack.push(node.pop);
     }
-    enqueueNode.push(first);
-    while (second.top.value !== null) {
-      first.push(second.pop);
+    firstStack.push(enqueueNode);
+    while (secondStack.top) {
+      firstStack.push(secondStack.pop);
     }
-    return first;
+    return firstStack;
   };
 
   dequeue() {
@@ -51,4 +51,7 @@ class Node {
   }
 }
 
-module.exports = PseudoQueue;
+module.exports = {
+  PseudoQueue,
+  Node
+};
