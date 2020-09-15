@@ -23,13 +23,13 @@ class Tree {
       throw new RangeError('This thing is empty');}
     while(!binaryArray.isEmpty()){
       binaryArray.shift();
-      tempArr.push(this.root);
+      tempArr.push(this.root.value);
     }
     if(this.root.left !== null){
-      binaryArray.push(this.root.left);
+      binaryArray.push(this.root.left.value);
     }
     if(this.root.right !== null){
-      binaryArray.push(this.root.right);
+      binaryArray.push(this.root.right.value);
     }
     return tempArr;
   }
