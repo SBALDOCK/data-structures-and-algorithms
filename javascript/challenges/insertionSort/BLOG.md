@@ -52,7 +52,8 @@ Thank you so much for taking this journey with me. If you enjoyed this blog, ple
         
       arr[j + 1] <-- temp
 
-##
+## Attachments
 
-
+[solution](insertion-sort.js)
+[tests](insertion-sort.test.js)
 ![whiteboard](whiteboard.png)
