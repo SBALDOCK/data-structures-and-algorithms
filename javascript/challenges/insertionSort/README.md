@@ -15,6 +15,11 @@ Once you are done with your article, code a working, tested implementation of In
 
 ## Insertion Sort
 
+## Big O
+  * Time Complexity - `O(n^2)`
+  * Space Complexity - `O(1)`
+
 [Challenge](insertion-sort.js);
+[blog](BLOG.md);
 [tests](insertion-sort.test.js);
 [whiteboard](whiteboard.png);

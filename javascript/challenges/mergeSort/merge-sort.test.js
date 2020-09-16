@@ -1,7 +1,10 @@
 'use strict';
 
-const { Merge, mergeSort } = require('./merge-sort');
+const mergeSort = require('./merge-sort');
 
-it('should order sort an array', () => {
+const testArray = [1, 9, 5, 11]
 
+it('should merge sort a test array', () => {
+  let arr = new Array(testArray);
+  expect(arr).toBe([1, 5, 9, 11]);
 })
