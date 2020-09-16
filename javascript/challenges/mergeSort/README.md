@@ -1,4 +1,4 @@
-## Insertion Sort - Challenge 26
+## Merge Sort- Challenge 27
 
 
 ## Challenge Task 
@@ -19,7 +19,7 @@ Once you are done with your article, code a working, tested implementation of In
   * Time Complexity - `O(n^2)`
   * Space Complexity - `O(1)`
 
-[Challenge](insertion-sort.js);
+[Challenge](merge-sort.js);
 [blog](BLOG.md);
-[tests](insertion-sort.test.js);
+[tests](merge-sort.test.js);
 [whiteboard](whiteboard.png);
