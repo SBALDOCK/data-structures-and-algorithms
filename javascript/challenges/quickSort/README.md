@@ -8,13 +8,12 @@ Review the pseudocode below, then trace the algorithm by stepping through the pr
 ## Approach & Efficiency
 * O(n)
 
-## Insertion Sort
+## Quick Sort
 
 ## Big O
-  * Time Complexity - `O(n^2)`
-  * Space Complexity - `O(1)`
+  * Time Complexity - `O(n log(n))`
+  * Space Complexity - `O(n)`
 
 [Challenge](quick-sort.js);
 [blog](BLOG.md);
 [tests](quick-sort.test.js);
-[whiteboard](whiteboard.png);
