@@ -1,5 +1,5 @@
 # Hashtables
-<!-- Short summary or background information -->
+Insert, Retrieve, and View contents of a Hash Table
 
 ## Challenge
 Implement a Hashtable with the following methods:
@@ -10,10 +10,8 @@ Implement a Hashtable with the following methods:
 * hash: takes in an arbitrary key and returns an index in the collection.
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Best Case Scenario - Big O(1)
 
-## API
-<!-- Description of each method publicly available in each of your hashtable -->
 
 ## Attachments
 
