@@ -14,24 +14,25 @@ function mergeSort(arr) {
 
 function merge(left, right) {
   let newArray = [];
-  leftI = 0;
-  rightI = 0;
+  let leftIndex = 0;
+  let rightIndex = 0;
 
-  while (leftI < left.length && rightI < right.length) {
-    if (left[leftI] < right[rightI]) {
-      newArray.push(left[leftI]);
-      leftI++;
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      newArray.push(left[leftIndex]);
+      leftIndex++;
     } else {
-      newArray.push(right[rightI]);
-      rightI++;
+      newArray.push(right[rightIndex]);
+      rightIndex++;
     }
   }
   return newArray
-    .concat(left.slice(leftI))
-    .concat(right.slice(rightI));
+    .concat(left.slice(leftIndex))
+    .concat(right.slice(rightIndex));
 }
 
-module.exports = mergeSort();
+let array = [1, 5, 2, 9];
+mergeSort(array);
 // function mergeSort(arr) {
 //   let n = arr.length;
 //   if (n <= 1) {
