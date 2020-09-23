@@ -25,17 +25,14 @@ class Hashtable {
   get(key) {
     const index = this.hash(key);
     const itemsInBucket = this.buckets[index];
-    if (itemsInBucket === undefined) {
-      return null
-    } else {
+    if (itemsInBucket) {
       for (let item of itemsInBucket) {
         if (item[0] === key) {
           return item[1];
         }
-
       }
     }
-    return key;
+    return null;
   }
 
   contains(key) {
