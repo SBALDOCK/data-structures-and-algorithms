@@ -1,21 +1,25 @@
 'use strict';
 
-function leftJoin(hashOne, hashTwo) {
-  let returnArr = [];
+function leftJoin(obj1, obj2) {
 
-  for (let i = 0; i < hashOne.length; i++) {
-    let hashArr = [];
-    let hashOneKey = hashOne[i];
-    let hashOneValue = hashOne.get(hashOneKey);
-    hashArr.push(hashOneKey, hashOneValue);
-  }
+  const output = [];
 
-  if (hashTwo.contains(hashOneKey)) {
-    hashArr.push(hashTwo.get(hashOneKey));
-  } else {
-    hashArr.push('null');
+  for (let word in obj1) { // O(n) - Time
+
+    let synonym = obj1[word];
+
+    let antonym = 'Null';
+
+    if (word in obj2) { // O(1) - Time
+      antonym = obj2[word];
+    }
+
+    const entry = [word, synonym, antonym]; // O(1) - Time
+
+    output.push(entry); // Time O(n) - Time
+    // Space - O(n) - Dependent on the size of the left table
   }
-  returnArr.push(hashArr);
 }
 
 module.exports = leftJoin;
+
