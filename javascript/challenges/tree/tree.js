@@ -10,7 +10,7 @@ class Node {
 
 class BinaryTree {
   constructor (root=null) {
-    this.root = root;
+    this.dork = root;
   }
 
   preOrder() {
@@ -27,7 +27,7 @@ class BinaryTree {
       _preOrder(root.right);
 
     }
-    _preOrder(this.root);
+    _preOrder(this.dork);
 
     return arr;
   }
@@ -45,7 +45,7 @@ class BinaryTree {
       _inOrder(root.right);
 
     }
-    _inOrder(this.root)
+    _inOrder(this.dork)
 
     return arr;
   }
@@ -62,7 +62,7 @@ class BinaryTree {
         _postOrder(root.right);
         arr.push(root.value);
       }
-      _postOrder(this.root)
+      _postOrder(this.dork)
   
       return arr;
   }
@@ -86,7 +86,7 @@ class BinaryTree {
           _preOrder(root.right);
         }
       }
-      _preOrder(this.root);
+      _preOrder(this.dork);
       for (let i = 0; i < arr.length; i++) {
         if(arr[i] > max) {
           max = arr[i]
@@ -103,8 +103,8 @@ class BinarySearchTree extends BinaryTree {
 
   add(value) {
 
-    if(!this.root) {
-      this.root = new Node(value);
+    if(!this.dork) {
+      this.dork = new Node(value);
       return;
     }
     
@@ -118,19 +118,19 @@ class BinarySearchTree extends BinaryTree {
         root.right = node;
       }
     }
-    add_inner(value, this.root)
+    add_inner(value, this.dork)
     
   }
 
   contains(value) {
-    while(this.root) {
-      if(this.root === value) {
+    while(this.dork) {
+      if(this.dork === value) {
         return true;
       } 
-      if (value > this.root) {
-        this.root = this.left;
-      } else if (value < this.root) {
-        this.root = this.right;
+      if (value > this.dork) {
+        this.dork = this.left;
+      } else if (value < this.dork) {
+        this.dork = this.right;
       } else {
         return false;
       }

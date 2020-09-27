@@ -2,16 +2,16 @@
 
 const { BinaryTree, Node, BinarySearchTree } = require('./tree.js');
 
-it ('can instantiate an empty tree', () => {
+it('can instantiate an empty tree', () => {
   expect(BinaryTree).toBeDefined();
 })
 
-it ('can successfully instantiate a tree with a single root node', () => {
+it('can successfully instantiate a tree with a single root node', () => {
   const tree = new BinaryTree('bananas');
   expect(tree.root).toBe('bananas');
 })
 
-it ('can successfully add a left child and right child to a single root node', () => {
+it('can successfully add a left child and right child to a single root node', () => {
   const apples = new Node('apples', 'bananas', 'mangos');
   expect(apples.value).toStrictEqual('apples');
   expect(apples.left).toStrictEqual('bananas');
@@ -19,25 +19,25 @@ it ('can successfully add a left child and right child to a single root node', (
 })
 
 
-it ('can successfully return a collection from a preorder traversal', () => {
+it('can successfully return a collection from a preorder traversal', () => {
   const bananas = new Node('bananas');
   const mangos = new Node('mangos');
   const apples = new Node('apples', bananas, mangos);
   const tree = new BinaryTree(apples);
   expect(tree.preOrder()).toEqual(['apples', 'bananas', 'mangos']);
-  
+
 });
 
-it ('can successfully return a collection from an inorder traversal', ( )=> {
+it('can successfully return a collection from an inorder traversal', () => {
   const bananas = new Node('bananas');
   const mangos = new Node('mangos');
   const apples = new Node('apples', bananas, mangos);
   const tree = new BinaryTree(apples);
   expect(tree.inOrder()).toStrictEqual(['bananas', 'apples', 'mangos']);
-  
+
 })
 
-it ('can successfully return a collection from a postorder traversal', () => {
+it('can successfully return a collection from a postorder traversal', () => {
   const bananas = new Node('bananas');
   const mangos = new Node('mangos');
   const apples = new Node('apples', bananas, mangos);
@@ -55,10 +55,10 @@ it('can add an additional item to the tree', () => {
   const ten = new Node(10);
   const five = new Node(5);
   const fifteen = new Node(15);
-  
+
   ten.left = five;
   ten.right = fifteen;
-  
+
   const tree = new BinarySearchTree(ten);
 
   tree.add(25);

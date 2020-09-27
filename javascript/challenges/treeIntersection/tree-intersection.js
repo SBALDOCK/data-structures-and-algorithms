@@ -25,6 +25,5 @@ function interSectingTrees(tree1, tree2) {
   compareSecondTree(tree2.root)
 }
 
-// return resultArr = [];
 
 module.exports = interSectingTrees;

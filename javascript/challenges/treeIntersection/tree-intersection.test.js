@@ -1,37 +1,24 @@
-'use strict';
+const treeIntersection = require('./tree-intersection.js');
+let importClasses = require('../tree/tree');
+let BinaryTree = importClasses.BinaryTree;
+let Node = importClasses.Node;
 
-const { BinaryTree, Node } = require('../tree/tree.js');
-const Tree = require('./tree-intersection.js');
-
-it('should instantiate a tree', () => {
-  expect(Tree).toBeDefined();
-})
-
-it('can successfully instantiate a tree with a single root node', () => {
-  const tree = new BinaryTree('bananas');
-  expect(tree.root).toBe('bananas');
-})
-
-it('can successfully add a left child and right child to a single root node', () => {
-  const apples = new Node('apples', 'bananas', 'mangos');
-  expect(apples.value).toStrictEqual('apples');
-  expect(apples.left).toStrictEqual('bananas');
-  expect(apples.right).toStrictEqual('mangos')
-})
-
-it('can create an empty array', () => {
-  const array = [];
-  expect(array).toBeDefined();
+describe('testing tree intersection', () => {
+  it('should properly return a set of numbers', () => {
+    let tree1 = new BinaryTree(new Node(3));
+    tree1.root.left = new Node(4, new Node(2), new Node(6));
+    tree1.root.right = new Node(8, new Node(10), new Node(15));
+    //        3
+    //    4       8
+    //  2   6   10    15
+    let tree2 = new BinaryTree(new Node(7));
+    tree2.root.left = new Node(3, new Node(11), new Node(4));
+    tree2.root.right = new Node(5, new Node(20), new Node(21));
+    //        7
+    //    3       5
+    //  11   4   20    21
+    const expected = [3, 4]
+    const matchingVals = treeIntersection(tree1, tree2);
+    expect(matchingVals).toEqual(expect.arrayContaining(expected));
+  });
 });
-
-it('returns common values from two trees', () => {
-  const bananas = new Node('bananas');
-  const mangos = new Node('mangos');
-  const apples = new Node('apples', bananas, mangos);
-  const tree1 = new BinaryTree(apples);
-  const oranges = new Node('oranges');
-  const mangos = new Node('mangos');
-  const apples = new Node('apples', oranges, mangos);
-  const tree2 = new BinaryTree(apples);
-  expect(Tree).toStrictEqual(['apples, mangoes']);
-})
