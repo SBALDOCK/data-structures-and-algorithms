@@ -1,42 +1,76 @@
 'use strict';
 
-const getEdges = (graph, cityArray) => {
-  let cities = graph.adjacencyList.entries();
-  let origin;
-  let counter = 0;
-  while (origin !== cityArray[0] && counter < graph.adjencyList.size) {
-    let start = cities.next().value.value;
-    if (cityArray[0] === start) {
-      origin = start;
-    }
-    counter++;
-    if (!origin) {
-      return false;
-    }
+class Vertex {
+  constructor(value) {
+    this.value = value;
   }
-  let pointer = 1;
-  let price = 0;
-  while (pointer < cityArray.length - 1) {
-    for (let edge of origin.neighbors) {
-      if (edge.node1.value !== origin.value && edge.node1.value === cityArray[pointer]) {
-        origin = edge.node1;
-        pointer++;
-        price += edge.weight;
-      }
-      if (edge.node2.value !== origin.value && edge.node2.value === cityArray[pointer]) {
-        origin = edge.node2;
-        pointer++;
-        price += edge.weight;
-      }
-      if (edge.node1.value !== cityArray[pointer] && edge.node2.value !== cityArray[pointer]) {
-        return false;
-      }
-    }
-  }
-  return { true: price };
-
 }
 
-module.exports = getEdges;
+class Edge {
+  constructor(vertex, weight) {
+    this.vertex = vertex;
+    this.weight = weight;
+  }
+}
 
+class Graph {
+  constructor() {
+    this.adjacencyList = new Map();
 
+  }
+
+  addVertex(vertex) {
+    this.adjacencyList.set(vertex, []);
+  }
+
+  // alternate
+  // addVertex(value){
+  //   const vertex = new Vertex(value);
+  //   this.adjacencyList.set(vertex, []);
+  // }
+
+  // this only handles one direction of edge
+  addEdge(startVertex, endVertex, weight = 0) {
+
+    const edges = this.adjacencyList.get(startVertex);
+    const edge = new Edge(endVertex, weight);
+    edges.push(edge);
+
+  }
+
+  getNeighbors(vertex) {
+    return this.adjacencyList.get(vertex);
+  }
+}
+
+function getEdges(graph, airports) {
+
+  let isPossible = true;
+  let cost = 0;
+
+  for (let i = 0; i < airports.length - 1; i++) {
+    const airport = airports[i];
+    const destination = airports[i + 1];
+
+    const directConnections = graph.getNeighbors(airport);
+    let directFlight = false;
+    for (let connection of directConnections) {
+      if (connection.vertex === destination) {
+        directFlight = true;
+        cost += connection.weight;
+        break;
+      }
+    }
+    if (!directFound) {
+      isPossible = false;
+      cost = 0;
+      break;
+    }
+  }
+  return {
+    isPossible,
+    cost,
+  };
+}
+
+module.exports = { Graph, Edge, Vertex, getEdges }

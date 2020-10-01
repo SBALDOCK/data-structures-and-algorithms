@@ -1,32 +1,36 @@
 'use strict';
 
-const { Graph, Node } = require('../graph/graph.js');
+const { Graph } = require('../graph/graph.js');
 const { Queue } = require('../stacksAndQueues/stacks-and-queues');
 
-function breadthFirst() {
-  const graph = new Graph();
-  const start = new Node();
-  graph.addNode(start);
-  let visited = [];
-  let queue = new Queue();
-  queue.enqueue(start);
-  visited.push(start);
-
-  while (!queue.isEmpty()) {
-    let front = queue.dequeue();
-
-    console.log('visited 1: ', visited);
-    this.edges[front.value].forEach(vertex => {
-      console.log('vertex: ', vertex);
-      if (!visited.includes(vertex)) {
-        visited.push(vertex);
-        queue.enqueue(vertex);
-      }
-    });
-
+class breadthFirstGraph extends Graph {
+  constructor() {
+    super()
   }
-  return visited;
+
+  breadthFirst(start) {
+    const graph = new Set();
+    let queue = new Queue();
+    let visited = [];
+    queue.enqueue(start);
+
+    while (queue.length) {
+      let front = queue.dequeue();
+      visited.push(start.value);
+      graph.add(front);
+      this.edges[front.value].forEach(vertex => {
+        console.log('vertex: ', vertex);
+        if (!visited.includes(vertex)) {
+          visited.push(vertex.value);
+          queue.enqueue(vertex);
+        }
+      });
+
+    }
+    return visited;
+  }
+
 }
 
-module.exports = breadthFirst();
+module.exports = breadthFirstGraph;
 
