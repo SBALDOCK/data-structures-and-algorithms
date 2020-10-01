@@ -1,29 +1,43 @@
 'use strict';
 
 const getEdges = require('./get-edges')
-const Graph = require('../graph/graph');
+const { Graph } = require('../graph/graph');
 
-const graph = new Graph();
-let Pandora = graph.addNode('Pandora');
-let Metroville = graph.addNode('Metroville');
-let Narnia = graph.addNode('Narnia');
-let Arendelle = graph.addNode('Arendelle');
-let Naboo = graph.addNode('Naboo');
-let Monstropolis = graph.addNode('Monstropolis');
-graph.addEdge(Pandora, Arendelle, 150);
-graph.addEdge(Pandora, Metroville, 82);
-graph.addEdge(Metroville, Arendelle, 99);
-graph.addEdge(Narnia, Metroville, 37);
-graph.addEdge(Metroville, Naboo, 26);
-graph.addEdge(Narnia, Naboo, 250);
-graph.addEdge(Metroville, Monstropolis, 105);
-graph.addEdge(Monstropolis, Naboo, 73);
-graph.addEdge(Monstropolis, Arendelle, 42);
+it('should determine connection', () => {
+  const graph = new Graph();
+
+  const Metroville = new Vertex('Metroville');
+  const Pandora = new Vertex('Pandora');
+
+  graph.addVertex(Metroville);
+  graph.addVertex(Pandora);
+
+  graph.addEdge(Metroville, Pandora, 82);
+
+  const result = getEdges(graph, [Metroville, Pandora]);
+
+  expect(result.isPossible);
+  expect(result.cost).toBe(82);
+})
+
+it('should determine connection', () => {
+  const graph = new Graph();
+
+  const Arendelle = new Vertex('Arenedelle');
+  const Monstropolis = new Vertex('Monstropolis');
+  const Naboo = new Vertex('Naboo');
 
 
-// describe('get edge tests', () => {
-//   it('should work for happy path inputs', () => {
-//     expect(getEdges(graph, [Metroville, Pandora])).toBe('True, $82')
-//     expect(getEdges(graph, [Arendelle, Monstropolis, Naboo])).toBe('True, $115')
-//   });
-// });
+
+  graph.addVertex(Arendelle);
+  graph.addVertex(Monstropolis);
+  graph.addVertex(Naboo);
+
+  graph.addEdge(Arendelle, Monstropolis, 42);
+  graph.addEdge(Monstropolis, Naboo, 73);
+
+  const result = getEdges(graph, [Arendelle, Monstropolis, Naboo]);
+
+  expect(result.isPossible).toBe(true);
+  expect(result.cost).toBe(225);
+})

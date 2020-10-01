@@ -5,7 +5,7 @@ const { Graph, Node } = require('../graph/graph');
 
 
 it('should return all vertices', () => {
-  const graph = new Graph();
+  const graph = new BreadthFirstGraph();
   let node1 = graph.addNode('hello');
   let node2 = graph.addNode('there');
   let node3 = graph.addNode('!!!');
@@ -14,7 +14,7 @@ it('should return all vertices', () => {
   graph.addEdge(node1, node3);
   graph.addEdge(node2, node3);
   graph.addEdge(node3, node4);
-  let result = breadthFirst(node1);
+  let result = graph.breadthFirst(node1);
   expect(result).toEqual([
     { value: 'hello' },
     { value: 'there' },

@@ -1,77 +1,56 @@
 'use strict';
 
-class Edge {
-  constructor(source, destination, weight) {
-    this.source = source;
-    this.destination = destination;
-    this.weight = weight;
+class Vertex {
+  constructor(value) {
+    this.value = value;
   }
 }
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.adjacents = [];
+class Edge {
+  constructor(vertex, weight) {
+    this.vertex = vertex;
+    this.weight = weight;
   }
 }
 
 class Graph {
   constructor() {
-    this.AdjList = [];
-    this.edges = [];
+    this.adjacencyList = new Map();
+
   }
 
-  // Adds a new node
-  // Takes in value of node
-  // Returns added node
-  addNode(node) {
-    const newNode = new Node();
-    this.AdjList.push(node)
-    return newNode;
+  addVertex(vertex) {
+    this.adjacencyList.set(vertex, []);
   }
 
-  // adds edge between two nodes
-  // includes weight
-  // Takes in two nodes connected by edge
-  addEdge(node1, node2, weight = null) {
+  // alternate
+  // addVertex(value){
+  //   const vertex = new Vertex(value);
+  //   this.adjacencyList.set(vertex, []);
+  // }
 
-    node1.adjacents.push(node2);
-    node2.adjacents.push(node1);
+  // this only handles one direction of edge
+  addEdge(startVertex, endVertex, weight = 0) {
 
-    const edge = new Edge(node1, node2, weight);
+    const edges = this.adjacencyList.get(startVertex);
+    const edge = new Edge(endVertex, weight);
+    edges.push(edge);
 
-    this.edges.push(edge);
   }
 
-  // returns all nodes in the graph as a collection
+  getNeighbors(vertex) {
+    return this.adjacencyList.get(vertex);
+  }
   getNodes() {
-    return this.AdjList;
+    return this.adjacencyList;
   }
-
-
-  // Return collection of edges connected to a given node
-  // Takes in a given node
-  // Include weight of the connection
-  getNeighbors(node) {
-
-    const edgeCollection = [];
-
-    this.edges.forEach(edge => {
-      if (edge.source === node.value) {
-        edgeCollection.push(edge);
-      }
-    })
-    return edgeCollection;
-
-  };
-
   size() {
-    return this.AdjList.length;
+    return this.nodes.length;
   }
 }
 
 module.exports = {
-  Edge,
   Node,
   Graph
 }
+
